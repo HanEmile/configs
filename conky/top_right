@@ -1,0 +1,55 @@
+conky.config = {
+	alignment = 'top_right',
+	background = true,
+	color2 = '588078',
+	cpu_avg_samples = 2,
+	default_color = '80FFF9',
+	double_buffer = true,
+	font = 'DroidSansMono3:size=8',
+	draw_shades = false,
+	gap_x = 25,
+	gap_y = 50,
+	minimum_width = 100,
+	no_buffers = true,
+	own_window = true,
+	own_window_type = 'override',
+	own_window_transparent = true,
+	update_interval = 2.0,
+	use_xft = true
+}
+
+conky.text = [[
+${font Arial:bold:size=10}${color}SYSTEM ${hr 1} $color2 $font
+$sysname $kernel $alignr $machine
+Uptime $alignr${uptime}
+User / host $alignr${execi 1200 whoami}@${nodename}
+
+${font Arial:bold:size=10}${color}PROCESSORS ${hr 1} $color2 $font
+Total CPU: ${cpu cpu0}%
+${cpubar}
+Core 1: ${freq 1} MHz        Temp: ${exec sensors|grep 'Core 0'|awk '{print $3}'}
+${cpubar cpu1}
+Core 2: ${freq 2} MHz        Temp: ${exec sensors|grep 'Core 0'|awk '{print $3}'}
+${cpubar cpu2}
+Core 3: ${freq 3} MHz        Temp: ${exec sensors|grep 'Core 1'|awk '{print $3}'}
+${cpubar cpu3}
+Core 4: ${freq 4} MHz        Temp: ${exec sensors|grep 'Core 1'|awk '{print $3}'}
+${cpubar cpu4}
+
+${font Arial:bold:size=10}${color}MEMORY ${hr 1} $color2 $font
+MEM $alignc $mem / $memmax $alignr $memperc%
+$membar
+
+${font Arial:bold:size=10}${color}SSD ${hr 1} $color2 $font
+/ $alignc ${fs_used /} / ${fs_size /} ${alignr} ${fs_used_perc /}%
+${fs_bar 6 /}
+
+${font Arial:bold:size=10}${color}NETWORK ${hr 1} $color2 $font
+IP on wlp5s0 $alignr ${addr wlp5s0}
+IP on enp4s0 $alignr ${addr enp4s0}
+# External IP $alignr ${exec curl -s www.icanhazip.com}
+
+${font Arial:bold:size=10}${color}BATTERY ${hr 1} $color2 $font
+${battery BAT1} ${alignr} ${battery_percent BAT1} %
+${battery_bar BAT1}
+]]

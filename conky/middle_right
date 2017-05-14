@@ -1,0 +1,26 @@
+conky.config = {
+	alignment = 'top_right',
+	background = true,
+	color2 = '588078',
+	cpu_avg_samples = 2,
+	default_color = '80FFF9',
+	double_buffer = true,
+	font = 'DroidSansMono3:size=8',
+	draw_shades = false,
+	gap_x = 400,
+	gap_y = 50,
+	minimum_width = 200,
+	no_buffers = true,
+	own_window = true,
+	own_window_type = 'override',
+	own_window_transparent = true,
+	update_interval = 30,
+	use_xft = true
+}
+
+conky.text = [[
+${font Arial:bold:size=10}${color}WIND ${hr 1} $color2 $font
+${exec curl http://tgftp.nws.noaa.gov/data/observations/metar/decoded/EDDL.TXT | grep -m1 "" | cut -f1 -d "("}
+${exec curl http://tgftp.nws.noaa.gov/data/observations/metar/decoded/EDDL.TXT | grep "EDDL " | cut -c 21-24}    ${exec curl http://tgftp.nws.noaa.gov/data/observations/metar/decoded/EDDL.TXT | grep "EDDL " | cut -c 18-20}°
+
+]]

@@ -1,0 +1,50 @@
+conky.config = {
+  alignment = 'top_left',
+  background = true,
+  color2 = '588078',
+  cpu_avg_samples = 2,
+  default_color = '80FFF9',
+  double_buffer = true,
+  font = 'DroidSansMono3:size=8',
+  draw_shades = false,
+  gap_x = 25,
+  gap_y = 50,
+  minimum_width = 200,
+  no_buffers = true,
+  own_window = true,
+  own_window_type = 'override',
+  own_window_transparent = true,
+  update_interval = 1.0,
+  use_xft = true
+}
+
+conky.text = [[
+# Ping Section
+${font Arial:bold:size=10}${color}NETWORK PING ${hr 1} $color2 $font
+ping $alignr ${execi 1 ping www.google.com -c 1 | grep time= | rev | cut -c -7 | rev}
+#
+
+# Ethernet Section
+${font Arial:bold:size=10}${color}ETHERNET ${hr 1} $color2 $font
+download $alignr ${downspeed wlp5s0}
+${downspeedgraph enp4s0 18, 248 $color2 $color2}
+upload   $alignr ${upspeed enp5s0}
+${upspeedgraph enp4s0 18, 248 $color2 $color2}
+#
+
+# WLAN Section
+${font Arial:bold:size=10}${color}WLAN ${hr 1} $color2 $font
+SSID ${alignr} ${wireless_essid wlp5s0}
+
+download $alignr ${downspeed wlp5s0}
+${downspeedgraph wlp5s0 18, 248 $color2 $color2}
+upload   $alignr ${upspeed enp5s0}
+${upspeedgraph wlp5s0 18, 248 $color2 $color2}
+
+channel ${alignr} ${wireless_channel wlp5s0}
+freq ${alignr} ${wireless_freq wlp5s0}
+
+quality ${alignr} ${wireless_link_qual_perc wlp5s0} %
+link_bar ${wireless_link_bar wlp5s0}
+
+]]
