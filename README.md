@@ -1,10 +1,7 @@
 # Configs
 
----
-
 ## Conky
 
-***
 ### Top Left
 
 #### Network Ping
