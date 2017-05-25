@@ -1,0 +1,9 @@
+#!/bin/bash
+
+conky -c /usr/share/conky/maia/top_left &&
+conky -c /usr/share/conky/maia/top_right &&
+conky -c /usr/share/conky/maia/bottom_left &&
+conky -c /usr/share/conky/maia/bottom_right &&
+conky -c /usr/share/conky/maia/middle_right &&
+
+exit 0
