@@ -1,0 +1,66 @@
+conky.config = {
+  alignment = 'top_left',
+  background = true,
+  color2 = 'AAAAAA',
+  cpu_avg_samples = 2,
+  default_color = 'AAAAAA',
+  double_buffer = true,
+  font = 'monospace:size=8',
+  draw_shades = false,
+  gap_x = 25,
+  gap_y = 50,
+  minimum_width = 200,
+  no_buffers = true,
+  own_window = true,
+  own_window_type = 'override',
+  own_window_transparent = true,
+  update_interval = 1.0,
+  use_xft = true
+}
+
+conky.text = [[
+# Ping Section
+${font monospace:bold:size=10}${color}NETWORK PING ${hr 1} $color2 $font
+ping $alignr ${execi 1 ping www.google.com -c 1 | grep time= | rev | cut -c -7 | rev}
+#
+
+# Ethernet Section
+${font monospace:bold:size=10}${color}ETHERNET ${hr 1} $color2 $font
+download $alignr ${downspeed wlp5s0}
+${downspeedgraph enp4s0 18, 248 $color2 $color2}
+upload   $alignr ${upspeed enp5s0}
+${upspeedgraph enp4s0 18, 248 $color2 $color2}
+#
+
+# WLAN Section
+${font monospace:bold:size=10}${color}WLAN ${hr 1} $color2 $font
+SSID ${alignr} ${wireless_essid wlp5s0}
+
+download $alignr ${downspeed wlp5s0}
+${downspeedgraph wlp5s0 18, 248 $color2 $color2}
+upload   $alignr ${upspeed enp5s0}
+${upspeedgraph wlp5s0 18, 248 $color2 $color2}
+
+channel ${alignr} ${wireless_channel wlp5s0}
+freq ${alignr} ${wireless_freq wlp5s0}
+
+quality ${alignr} ${wireless_link_qual_perc wlp5s0} %
+link_bar ${wireless_link_bar wlp5s0}
+
+
+# Processes Section
+${font monospace:bold:size=10}${color}PROCESSES ${hr 1} $color2 $font
+
+${color}PID         Process${alignr}Memory     CPU
+
+${color}${top pid 1}       ${top name 1}${alignr}${top mem_res 1} ${top cpu 1}%
+${color}${top pid 2}       ${top name 2}${alignr}${top mem_res 2} ${top cpu 2}%
+${color}${top pid 3}       ${top name 3}${alignr}${top mem_res 3} ${top cpu 3}%
+${color}${top pid 4}       ${top name 4}${alignr}${top mem_res 4} ${top cpu 4}%
+${color}${top pid 5}       ${top name 5}${alignr}${top mem_res 5} ${top cpu 5}%
+${color}${top pid 6}       ${top name 6}${alignr}${top mem_res 6} ${top cpu 6}%
+${color}${top pid 7}       ${top name 7}${alignr}${top mem_res 7} ${top cpu 7}%
+${color}${top pid 8}       ${top name 8}${alignr}${top mem_res 8} ${top cpu 8}%
+${color}${top pid 9}       ${top name 9}${alignr}${top mem_res 9} ${top cpu 9}%
+${color}${top pid 10}       ${top name 10}${alignr}${top mem_res 10} ${top cpu 10}%
+]]

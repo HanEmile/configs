@@ -1,0 +1,51 @@
+conky.config = {
+	alignment = 'top_right',
+	background = false,
+	color2 = 'AAAAAA',
+	color3 = 'FF0000',
+	cpu_avg_samples = 2,
+	default_color = 'AAAAAA',
+	double_buffer = true,
+	font = 'monospace:size=8',
+	draw_shades = false,
+	gap_x = 300,
+	gap_y = 50,
+	minimum_width = 200,
+	no_buffers = true,
+	own_window = true,
+	own_window_type = 'override',
+	own_window_transparent = true,
+	update_interval = 15,
+	use_xft = true
+}
+
+conky.text = [[
+${font monospace:bold:size=10}${color}[SSH] AVAILABLE PCS ${hr 1} $color2 $font
+
+*.ita.uni-heidelberg.de
+
+cosmo5 ${alignr} ${exec if [ `ping -c 1 cosmo5.ita.uni-heidelberg.de | grep -P -o ".{0,2}received" | cut -b 1` -eq 1 ]; then echo online; else echo offline; fi}
+${hr 1}
+cosmo02 ${alignr} ${exec if [ `ping -c 1 cosmo02.ita.uni-heidelberg.de | grep -P -o ".{0,2}received" | cut -b 1` -eq 1 ]; then echo online; else echo offline; fi}
+cosmo9 ${alignr} ${exec if [ `ping -c 1 cosmo9.ita.uni-heidelberg.de | grep -P -o ".{0,2}received" | cut -b 1` -eq 1 ]; then echo online; else echo offline; fi}
+cosmo11 ${alignr} ${exec if [ `ping -c 1 cosmo11.ita.uni-heidelberg.de | grep -P -o ".{0,2}received" | cut -b 1` -eq 1 ]; then echo online; else echo offline; fi}
+cosmo12 ${alignr} ${exec if [ `ping -c 1 cosmo12.ita.uni-heidelberg.de | grep -P -o ".{0,2}received" | cut -b 1` -eq 1 ]; then echo online; else echo offline; fi}
+cosmo15 ${alignr} ${exec if [ `ping -c 1 cosmo15.ita.uni-heidelberg.de | grep -P -o ".{0,2}received" | cut -b 1` -eq 1 ]; then echo online; else echo offline; fi}
+cosmo16 ${alignr} ${exec if [ `ping -c 1 cosmo16.ita.uni-heidelberg.de | grep -P -o ".{0,2}received" | cut -b 1` -eq 1 ]; then echo online; else echo offline; fi}
+cosmo24 ${alignr} ${exec if [ `ping -c 1 cosmo24.ita.uni-heidelberg.de | grep -P -o ".{0,2}received" | cut -b 1` -eq 1 ]; then echo online; else echo offline; fi}
+cosmo25 ${alignr} ${exec if [ `ping -c 1 cosmo25.ita.uni-heidelberg.de | grep -P -o ".{0,2}received" | cut -b 1` -eq 1 ]; then echo online; else echo offline; fi}
+cosmo26 ${alignr} ${exec if [ `ping -c 1 cosmo26.ita.uni-heidelberg.de | grep -P -o ".{0,2}received" | cut -b 1` -eq 1 ]; then echo online; else echo offline; fi}
+cosmo27 ${alignr} ${exec if [ `ping -c 1 cosmo27.ita.uni-heidelberg.de | grep -P -o ".{0,2}received" | cut -b 1` -eq 1 ]; then echo online; else echo offline; fi}
+cosmo30 ${alignr} ${exec if [ `ping -c 1 cosmo30.ita.uni-heidelberg.de | grep -P -o ".{0,2}received" | cut -b 1` -eq 1 ]; then echo online; else echo offline; fi}
+cosmo35 ${alignr} ${exec if [ `ping -c 1 cosmo35.ita.uni-heidelberg.de | grep -P -o ".{0,2}received" | cut -b 1` -eq 1 ]; then echo online; else echo offline; fi}
+cosmo37 ${alignr} ${exec if [ `ping -c 1 cosmo37.ita.uni-heidelberg.de | grep -P -o ".{0,2}received" | cut -b 1` -eq 1 ]; then echo online; else echo offline; fi}
+cosmo38 ${alignr} ${exec if [ `ping -c 1 cosmo38.ita.uni-heidelberg.de | grep -P -o ".{0,2}received" | cut -b 1` -eq 1 ]; then echo online; else echo offline; fi}
+${hr 1}
+structure02 ${alignr} ${exec if [ `ping -c 1 structure02.ita.uni-heidelberg.de | grep -P -o ".{0,2}received" | cut -b 1` -eq 1 ]; then echo online; else echo offline; fi}
+structure03 ${alignr} ${exec if [ `ping -c 1 structure03.ita.uni-heidelberg.de | grep -P -o ".{0,2}received" | cut -b 1` -eq 1 ]; then echo online; else echo offline; fi}
+${hr 1}
+planet04 ${alignr} ${exec if [ `ping -c 1 planet04.ita.uni-heidelberg.de | grep -P -o ".{0,2}received" | cut -b 1` -eq 1 ]; then echo online; else echo offline; fi}
+${hr 1}
+kang ${alignr} ${exec if [ `ping -c 1 kang.ita.uni-heidelberg.de | grep -P -o ".{0,2}received" | cut -b 1` -eq 1 ]; then echo online; else echo offline; fi}
+kodos ${alignr} ${exec if [ `ping -c 1 kodos.ita.uni-heidelberg.de | grep -P -o ".{0,2}received" | cut -b 1` -eq 1 ]; then echo online; else echo offline; fi}
+]]
