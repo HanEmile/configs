@@ -1,0 +1,24 @@
+conky.config = {
+	alignment = 'top_right',
+	background = true,
+	color2 = 'AAAAAA',
+	cpu_avg_samples = 2,
+	default_color = 'AAAAAA',
+	double_buffer = true,
+	font = 'monospace:size=8',
+	draw_shades = false,
+	gap_x = 525,
+	gap_y = 50,
+	minimum_width = 400,
+	no_buffers = true,
+	own_window = true,
+	own_window_type = 'override',
+	own_window_transparent = true,
+	update_interval = 1,
+	use_xft = true
+}
+
+conky.text = [[
+${font monospace:bold:size=10}${color}NETWORKS ${hr 1} $color2 $font
+${exec nmcli --field SSID,CHAN,RATE,BARS,SECURITY dev wifi list}
+]]

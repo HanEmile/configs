@@ -1,0 +1,15 @@
+#!/bin/bash
+
+conky -d -c /usr/share/conky/conky_emile/bottom_left &&
+conky -d -c /usr/share/conky/conky_emile/bottom_right &&
+
+conky -d -c /usr/share/conky/conky_emile/middle_left &&
+conky -d -c /usr/share/conky/conky_emile/middle_right &&
+conky -d -c /usr/share/conky/conky_emile/middle_right_bottom &&
+
+conky -d -c /usr/share/conky/conky_emile/top_left &&
+conky -d -c /usr/share/conky/conky_emile/top_right &&
+conky -d -c /usr/share/conky/conky_emile/top_right_left &&
+
+exit 0
+

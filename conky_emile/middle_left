@@ -1,0 +1,25 @@
+conky.config = {
+	alignment = 'top_left',
+	background = false,
+	color2 = 'AAAAAA',
+	cpu_avg_samples = 2,
+	default_color = 'AAAAAA',
+	double_buffer = true,
+	font = 'monospace:size=8',
+	draw_shades = false,
+	gap_x = 300,
+	gap_y = 50,
+	minimum_width = 100,
+	no_buffers = true,
+	own_window = true,
+	own_window_type = 'override',
+	own_window_transparent = true,
+	update_interval = 30,
+	use_xft = true
+}
+
+conky.text = [[
+${font monospace:bold:size=10}${color}PWA WORLD RANKING ${hr 1} $color2 $font
+
+${execi 1200 sudo pwa_ranking}
+]]
