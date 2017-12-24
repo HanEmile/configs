@@ -17,3 +17,6 @@
 
 # Mount the MPD stick and start mpd
 ./music.sh
+
+# Start the polybar
+./polybar.sh
